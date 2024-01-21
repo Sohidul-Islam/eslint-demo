@@ -138,7 +138,7 @@ after added script run this command bellow:
 }
 
 
-# DEmo
+# Demo
 
 step 1. 
 npm install eslint eslint-plugin-react eslint-plugin-react-hooks --save-dev
