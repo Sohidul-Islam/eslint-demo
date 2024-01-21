@@ -136,4 +136,85 @@ after added script run this command bellow:
   },
   "plugins": ["prettier", "react", "react-hooks"]
 }
+
+
+# DEmo
+
+step 1. 
+npm install eslint eslint-plugin-react eslint-plugin-react-hooks --save-dev
+
+.eslintrc.json file
+---------------
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": ["react", "react-hooks"],
+    "rules": {
+        "react/no-unused-prop-types": "error",
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "sort-imports": [
+            "error",
+            {
+                "ignoreCase": false,
+                "ignoreDeclarationSort": true,
+                "ignoreMemberSort": false,
+                "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+                "allowSeparatedGroups": false
+            }
+        ]
+    }
+}
+
+
+
+
+folder .vscode (settings-->workspace-->open settings.json file top-right button)
+settings.json
+---------------
+
+{
+    // config related to code formatting
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": null
+    },
+    //disable all built-in syntax checking
+    "javascript.validate.enable": false,
+    // "prettier.trailingComma": "none",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.tslint": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    // emmet
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "prettier.tabWidth": 2,
+    "prettier.printWidth": 120,
+    "prettier.singleQuote": true
+}
+
 ```
